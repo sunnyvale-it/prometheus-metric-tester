@@ -27,12 +27,12 @@ public class DataProvider {
     }
 
     @Synchronized
-    public MetricData updateData(MetricData metricData){
+    public MetricData updateValue(MetricData metricData){
         data.setValue(metricData.getValue());
         return data;
     }
 
-    public MetricData getData(){
+    public MetricData getValue(){
         return data;
     }
 

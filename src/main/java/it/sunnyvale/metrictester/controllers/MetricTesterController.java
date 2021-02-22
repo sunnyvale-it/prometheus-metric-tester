@@ -15,20 +15,20 @@ import javax.annotation.PostConstruct;
 
 @Slf4j
 @RestController
-@RequestMapping(value = "/v2/test")
+@RequestMapping(value = "/api/v2")
 public class MetricTesterController {
 
     @Autowired
     private DataProvider dataProvider;
 
-    @RequestMapping( value = "/updateData", method = RequestMethod.POST)
-    public MetricData updateData(@RequestBody MetricData inputData){
-        return dataProvider.updateData(inputData);
+    @RequestMapping( value = "/updateValue", method = RequestMethod.POST)
+    public MetricData updateValue(@RequestBody MetricData inputData){
+        return dataProvider.updateValue(inputData);
     }
 
-    @RequestMapping( value = "/testValue", method = RequestMethod.GET)
-    public MetricData getData(){
-        return dataProvider.getData();
+    @RequestMapping( value = "/getValue", method = RequestMethod.GET)
+    public MetricData getValue(){
+        return dataProvider.getValue();
     }
 
 
