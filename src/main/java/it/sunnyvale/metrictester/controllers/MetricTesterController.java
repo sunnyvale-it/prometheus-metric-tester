@@ -1,6 +1,7 @@
 package it.sunnyvale.metrictester.controllers;
 
 
+import io.micrometer.core.annotation.Timed;
 import it.sunnyvale.metrictester.model.MetricData;
 import it.sunnyvale.metrictester.prometheus.PrometheusExporter;
 import it.sunnyvale.metrictester.services.DataProvider;
@@ -22,11 +23,13 @@ public class MetricTesterController {
     @Autowired
     private PrometheusExporter prometheusExporter;
 
+    @Timed(value = "updatedValue.MetricData.request", histogram = true, extraTags = {"version", "1.0"}, percentiles = {0.95, 0.99})
     @RequestMapping( value = "/updateValue", method = RequestMethod.POST)
     public MetricData updateValue(@RequestBody MetricData inputData){
         return dataProvider.updateValue(inputData);
     }
 
+    @Timed(value = "getValue.MetricData.request", histogram = true, extraTags = {"version", "1.0"}, percentiles = {0.95, 0.99})
     @RequestMapping( value = "/getValue", method = RequestMethod.GET)
     public MetricData getValue(){
         return dataProvider.getValue();
