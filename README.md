@@ -1,4 +1,5 @@
 # prometheus-metric-tester
+<<<<<<< HEAD
 This is a test Application for monitoring with Prometheus and scaling requirements if needed.
 
 # Resources
@@ -45,3 +46,5 @@ or to see a specific metric just add after metrics the specific metric name, for
 ```via browser
 http://localhost:8102/metric-test/actuator/metrics/value_gauge
 ```
+=======
+>>>>>>> 407fe72672208e1ca5733d13c4f25fd2df3d6a34

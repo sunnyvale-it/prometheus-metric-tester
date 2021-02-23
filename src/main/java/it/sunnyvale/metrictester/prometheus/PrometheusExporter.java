@@ -2,7 +2,6 @@ package it.sunnyvale.metrictester.prometheus;
 
 import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.Metrics;
-import it.sunnyvale.metrictester.model.MetricData;
 import it.sunnyvale.metrictester.services.DataProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
