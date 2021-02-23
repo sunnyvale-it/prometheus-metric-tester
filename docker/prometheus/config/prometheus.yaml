@@ -1,0 +1,14 @@
+scrape_configs:
+
+  ## gather metrics of prometheus itself
+- job_name: prometheus
+  static_configs:
+    - targets:
+      - localhost:9090
+
+  ## gather the metrics from SpringBoot microservice
+- job_name: SpringBoot
+  metrics_path: /metric-test/actuator/prometheus
+  static_configs:
+    - targets:
+      - metrictester:8102
