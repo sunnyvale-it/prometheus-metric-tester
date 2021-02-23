@@ -3,6 +3,7 @@ package it.sunnyvale.metrictester.prometheus;
 import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.Metrics;
 import it.sunnyvale.metrictester.model.MetricData;
+import it.sunnyvale.metrictester.services.DataProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -16,18 +17,14 @@ public class PrometheusExporter {
     private int initialValue;
 
     @Autowired
-    private MetricData data;
+    private DataProvider dataProvider;
 
     private Gauge valueGauge;
 
     @PostConstruct
     public void init(){
-        data.setValue(initialValue);
-        valueGauge = Gauge.builder("value_gauge", data, data -> data.getValue()).strongReference(true).description("value gauge").register(Metrics.globalRegistry);
+        dataProvider.getData().setValue(initialValue);
+        valueGauge = Gauge.builder("value_gauge", dataProvider.getData(), data -> data.getValue()).strongReference(true).description("value gauge").register(Metrics.globalRegistry);
     }
 
-    public MetricData updateValue(MetricData inputData) {
-        data.setValue(inputData.getValue());
-        return data;
-    }
 }

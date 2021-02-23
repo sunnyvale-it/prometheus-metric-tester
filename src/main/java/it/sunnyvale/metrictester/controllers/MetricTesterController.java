@@ -24,7 +24,7 @@ public class MetricTesterController {
 
     @RequestMapping( value = "/updateValue", method = RequestMethod.POST)
     public MetricData updateValue(@RequestBody MetricData inputData){
-        return prometheusExporter.updateValue(inputData);
+        return dataProvider.updateValue(inputData);
     }
 
     @RequestMapping( value = "/getValue", method = RequestMethod.GET)
