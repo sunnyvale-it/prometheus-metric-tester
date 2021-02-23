@@ -1,6 +1,7 @@
 package it.sunnyvale.metrictester.services;
 
 import it.sunnyvale.metrictester.model.MetricData;
+import lombok.Data;
 import lombok.Synchronized;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
+@Data
 @Component
 public class DataProvider {
 
@@ -27,8 +29,8 @@ public class DataProvider {
     }
 
     @Synchronized
-    public MetricData updateValue(MetricData metricData){
-        data.setValue(metricData.getValue());
+    public MetricData updateValue(MetricData inputData) {
+        data.setValue(inputData.getValue());
         return data;
     }
 

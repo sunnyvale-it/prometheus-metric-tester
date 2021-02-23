@@ -1,29 +1,30 @@
 package it.sunnyvale.metrictester.prometheus;
 
-import io.prometheus.client.Gauge;
+import io.micrometer.core.instrument.Gauge;
+import io.micrometer.core.instrument.Metrics;
 import it.sunnyvale.metrictester.model.MetricData;
+import it.sunnyvale.metrictester.services.DataProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
+@Component
 public class PrometheusExporter {
 
     @Value("${meter.initial.value}")
     private int initialValue;
 
     @Autowired
-    private MetricData data;
+    private DataProvider dataProvider;
+
+    private Gauge valueGauge;
 
     @PostConstruct
     public void init(){
-        // todo inserire codice per creare server
+        dataProvider.getData().setValue(initialValue);
+        valueGauge = Gauge.builder("value_gauge", dataProvider.getData(), data -> data.getValue()).strongReference(true).description("value gauge").register(Metrics.globalRegistry);
     }
 
-    static final Gauge valueGauge = Gauge.build()
-            .name("inprogress_requests").help("Inprogress requests.").register();
-
-    void processRequest() {
-        // processare il dato  valueGauge....
-    }
 }

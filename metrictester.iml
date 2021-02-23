@@ -116,9 +116,6 @@
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-actuator:2.3.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-actuator-autoconfigure:2.3.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-actuator:2.3.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: io.micrometer:micrometer-core:1.5.7" level="project" />
-    <orderEntry type="library" name="Maven: org.hdrhistogram:HdrHistogram:2.1.12" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.latencyutils:LatencyUtils:2.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter-sleuth:2.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter:2.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-context:2.2.6.RELEASE" level="project" />
@@ -180,12 +177,11 @@
     <orderEntry type="library" name="Maven: io.zipkin.reporter2:zipkin-reporter-brave:2.15.2" level="project" />
     <orderEntry type="library" name="Maven: io.zipkin.reporter2:zipkin-reporter:2.15.2" level="project" />
     <orderEntry type="library" name="Maven: io.zipkin.zipkin2:zipkin:2.21.7" level="project" />
-    <orderEntry type="library" name="Maven: io.prometheus:simpleclient:0.10.0" level="project" />
-    <orderEntry type="library" name="Maven: io.prometheus:simpleclient_hotspot:0.10.0" level="project" />
-    <orderEntry type="library" name="Maven: io.prometheus:simpleclient_httpserver:0.10.0" level="project" />
-    <orderEntry type="library" name="Maven: io.prometheus:simpleclient_common:0.10.0" level="project" />
-    <orderEntry type="library" name="Maven: io.prometheus:simpleclient_pushgateway:0.10.0" level="project" />
-    <orderEntry type="library" name="Maven: javax.xml.bind:jaxb-api:2.3.1" level="project" />
-    <orderEntry type="library" name="Maven: javax.activation:javax.activation-api:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: io.micrometer:micrometer-registry-prometheus:1.5.7" level="project" />
+    <orderEntry type="library" name="Maven: io.prometheus:simpleclient_common:0.8.1" level="project" />
+    <orderEntry type="library" name="Maven: io.prometheus:simpleclient:0.8.1" level="project" />
+    <orderEntry type="library" name="Maven: io.micrometer:micrometer-core:1.5.7" level="project" />
+    <orderEntry type="library" name="Maven: org.hdrhistogram:HdrHistogram:2.1.12" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.latencyutils:LatencyUtils:2.0.3" level="project" />
   </component>
 </module>
