@@ -46,6 +46,11 @@ or to see a specific metric just add after metrics the specific metric name, for
 http://localhost:8102/metric-test/actuator/metrics/value_gauge
 ```
 
+# To access into Swagger
+```via browser
+http://localhost:8102/metric-test/swagger-ui/
+```
+
 
 # To update gauge value
 
