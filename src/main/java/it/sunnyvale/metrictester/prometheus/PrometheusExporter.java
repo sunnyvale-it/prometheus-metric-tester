@@ -8,22 +8,22 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import javax.management.monitor.GaugeMonitorMBean;
 
 @Component
 public class PrometheusExporter {
 
-    @Value("${meter.initial.value}")
-    private int initialValue;
+
 
     @Autowired
     private DataProvider dataProvider;
 
-    private Gauge valueGauge;
-
     @PostConstruct
     public void init(){
-        dataProvider.getData().setValue(initialValue);
-        valueGauge = Gauge.builder("value_gauge", dataProvider.getData(), data -> data.getValue()).strongReference(true).description("value gauge").register(Metrics.globalRegistry);
+        Gauge gauge = Gauge
+                .builder("value_gauge", dataProvider, DataProvider::getValue)
+                .description("")
+                .register(Metrics.globalRegistry);
     }
 
 }

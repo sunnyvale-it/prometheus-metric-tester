@@ -7,13 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
+
 @Data
-@Component
-//@Scope("singleton")
-@Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
-public class MetricData {
-
+public class MetricData implements Serializable {
     private int value;
-
-
 }
