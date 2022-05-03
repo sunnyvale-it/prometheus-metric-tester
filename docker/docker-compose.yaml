@@ -21,6 +21,7 @@ services:
     restart: always
 
   metrictester:
+    # platform: linux/amd64
     build:
       context: ../
     ports:

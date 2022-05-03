@@ -1,5 +1,9 @@
 # prometheus-metric-tester
-This is a test Application for monitoring with Prometheus and scaling requirements if needed.
+A test-bed application that lets you update a custom metric to test you horizontal scaling logic on top of Kubernetes
+
+# Deployment diagram
+
+![](img/metric-tester-diag.jpg)
 
 # Resources
 
