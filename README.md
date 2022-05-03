@@ -1,5 +1,5 @@
 # prometheus-metric-tester
-A test-bed application that lets you update a custom metric to test you horizontal scaling logic on top of Kubernetes
+A test-bed application that lets you update a custom metric to test your horizontal scaling logic on top of Kubernetes
 
 # Deployment diagram
 
